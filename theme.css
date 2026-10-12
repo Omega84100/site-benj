@@ -1,0 +1,8 @@
+body { --bg:#fffaf5; --text:#3b0d1c; --soft:#5b2333; --link:#881337; --focus:#be123c;
+  --top-bg:#fffaf5; --top-text:#3b0d1c; --cta-bg:#881337; --cta-text:#ffffff; --btn-radius:999px;
+  --hero-bg:linear-gradient(160deg,#fde8e4 0%,#fffaf5 70%); --hero-text:#3b0d1c; --hero-soft:#5b2333; --hero-line:#d4a5a5;
+  --alt-bg:#fdf1ea; --card-bg:#ffffff; --line:#ecd3c8; --accent-text:#881337; }
+body h1, body h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+.top { border-bottom: 1px solid var(--line); }
+.foot { background: #3b0d1c; color: #fffaf5; }
+.foot a { color: #fffaf5; }

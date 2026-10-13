@@ -16,7 +16,7 @@
   var CONSENT_KEY = 'bp-consent';
   var CONSENT_MAX_AGE = 1000 * 60 * 60 * 24 * 182; // 6 mois, durée recommandée par la CNIL
   var UMAMI_SRC = 'https://cloud.umami.is/script.js';
-  var UMAMI_WEBSITE_ID = 'REMPLACER-PAR-TON-ID-UMAMI'; // ← à remplacer par l'identifiant donné par Umami (voir le guide)
+  var UMAMI_WEBSITE_ID = 'cbb18ef8-00e1-4b82-8dda-2b79a4e69491'; // ← à remplacer par l'identifiant donné par Umami (voir le guide)
 
   function readConsent() {
     try {

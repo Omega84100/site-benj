@@ -1,8 +1,16 @@
 /* Benjamin Paule — scripts du site
    1. Bandeau de consentement + chargement de la mesure d'audience (Umami)
-   2. Validation et envoi du formulaire de contact (anti-spam Turnstile)   */
+   2. Menu latéral (bouton « Menu »)
+   3. En-tête qui devient opaque au défilement
+   4. Apparitions au défilement
+   5. Validation et envoi du formulaire de contact (anti-spam Turnstile)
+   Sans JavaScript, tout le contenu reste visible et le menu est un simple lien vers la navigation. */
 (function () {
   'use strict';
+
+  var root = document.documentElement;
+  root.classList.add('js'); // active les styles qui demandent JavaScript (panneau de menu, en-tête fixe)
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   /* ---------- 1. Consentement et mesure d'audience ---------- */
   var CONSENT_KEY = 'bp-consent';
@@ -63,7 +71,142 @@
     if (event.target.closest('[data-open-consent]')) showBanner();
   });
 
-  /* ---------- 2. Formulaire de contact ---------- */
+  /* ---------- 2. Menu latéral ---------- */
+  var menuLink = document.querySelector('[data-menu-toggle]');
+  var menu = document.getElementById('menu');
+  if (menuLink && menu) {
+    // Le lien « Menu » (qui mène à la navigation en bas de page) est remplacé par un vrai bouton.
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = menuLink.className;
+    while (menuLink.firstChild) toggle.appendChild(menuLink.firstChild);
+    toggle.setAttribute('aria-controls', 'menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    menuLink.parentNode.replaceChild(toggle, menuLink);
+
+    var closeBtn = menu.querySelector('[data-menu-close]');
+    if (closeBtn) closeBtn.hidden = false;
+
+    // Voile sombre derrière le panneau : un clic dessus ferme le menu.
+    var overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    overlay.hidden = true;
+    menu.parentNode.insertBefore(overlay, menu);
+
+    // Panneau fermé : retiré de l'affichage et du parcours au clavier.
+    menu.hidden = true;
+    menu.setAttribute('inert', '');
+
+    var menuOpen = false;
+    var hideTimer = null;
+
+    var focusables = function () {
+      return Array.prototype.filter.call(menu.querySelectorAll('a[href], button:not([hidden])'), function (el) { return !el.disabled; });
+    };
+
+    var openMenu = function () {
+      if (menuOpen) return;
+      menuOpen = true;
+      clearTimeout(hideTimer);
+      menu.hidden = false;
+      overlay.hidden = false;
+      menu.removeAttribute('inert');
+      toggle.setAttribute('aria-expanded', 'true');
+      // On attend une image pour que la transition d'ouverture se joue.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          menu.classList.add('is-open');
+          overlay.classList.add('is-open');
+        });
+      });
+      var first = focusables()[0];
+      if (first) first.focus();
+    };
+
+    var closeMenu = function (returnFocus) {
+      if (!menuOpen) return;
+      menuOpen = false;
+      menu.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      menu.setAttribute('inert', '');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        if (!menuOpen) { menu.hidden = true; overlay.hidden = true; }
+      }, reduceMotion ? 0 : 420); // laisse la transition de fermeture se terminer
+    };
+
+    toggle.addEventListener('click', function () { if (menuOpen) closeMenu(true); else openMenu(); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { closeMenu(true); });
+    overlay.addEventListener('click', function () { closeMenu(true); });
+
+    // Un clic sur un lien ferme le panneau ; le navigateur emmène ensuite à la section choisie.
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest('a[href]')) closeMenu(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!menuOpen) return;
+      if (event.key === 'Escape') { event.preventDefault(); closeMenu(true); return; }
+      // Tabulation : le focus reste dans le panneau tant qu'il est ouvert.
+      if (event.key === 'Tab') {
+        var items = focusables();
+        if (!items.length) return;
+        var firstItem = items[0];
+        var lastItem = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === firstItem) { event.preventDefault(); lastItem.focus(); }
+        else if (!event.shiftKey && document.activeElement === lastItem) { event.preventDefault(); firstItem.focus(); }
+        else if (!menu.contains(document.activeElement)) { event.preventDefault(); firstItem.focus(); }
+      }
+    });
+  }
+
+  /* ---------- 3. En-tête opaque au défilement ---------- */
+  var overlayHeader = document.querySelector('.site-header--overlay');
+  if (overlayHeader) {
+    var ticking = false;
+    var updateHeader = function () {
+      overlayHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateHeader); }
+    }, { passive: true });
+    updateHeader();
+  }
+
+  /* ---------- 4. Apparitions au défilement ---------- */
+  // Seuls les éléments sous la ligne de flottaison sont masqués puis révélés ;
+  // ceux déjà à l'écran (ou au-dessus) sont affichés tout de suite.
+  var revealItems = document.querySelectorAll('[data-reveal]');
+  if (revealItems.length && 'IntersectionObserver' in window && !reduceMotion) {
+    var viewportH = window.innerHeight || document.documentElement.clientHeight;
+    // Adresse avec ancre (ex. /#contact) : le navigateur va descendre jusqu'à la section visée,
+    // on calcule donc ce qui sera à l'écran à partir de cette section.
+    var offset = 0;
+    if (window.location.hash.length > 1) {
+      var anchorTarget = null;
+      try { anchorTarget = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) { /* ancre mal formée */ }
+      if (anchorTarget) offset = Math.max(0, anchorTarget.getBoundingClientRect().top);
+    }
+    var pendingItems = [];
+    Array.prototype.forEach.call(revealItems, function (el) {
+      if (el.getBoundingClientRect().top - offset < viewportH) el.classList.add('is-visible');
+      else pendingItems.push(el);
+    });
+    if (pendingItems.length) {
+      var revealer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealer.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      pendingItems.forEach(function (el) { revealer.observe(el); });
+      root.classList.add('reveal-on');
+    }
+  }
+
+  /* ---------- 5. Formulaire de contact ---------- */
   var form = document.getElementById('contact-form');
   if (!form) return;
 
@@ -79,7 +222,7 @@
     if (turnstileRequested || !sitekey) return;
     turnstileRequested = true;
     window.onTurnstileLoad = function () {
-      widgetId = window.turnstile.render(turnstileBox, { sitekey: sitekey, language: 'fr', theme: 'light' });
+      widgetId = window.turnstile.render(turnstileBox, { sitekey: sitekey, language: 'fr', theme: 'dark' });
     };
     var s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';

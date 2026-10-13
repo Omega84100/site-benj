@@ -1,0 +1,17 @@
+// Réglages Cloudflare Workers du site benjamin-paule.me
+//   public/ : le site (pages, styles, images), servi tel quel par Cloudflare
+//   src/    : l'API du formulaire de contact, exécutée sur les serveurs de Cloudflare
+{
+  "name": "site-benj", // le nom de ton Worker dans Cloudflare
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page", // page introuvable : affiche public/404.html
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"] // seules les adresses /api/... passent par src/worker.js
+  },
+  "keep_vars": true, // garde les variables ajoutées dans le tableau de bord Cloudflare
+  "observability": { "enabled": true } // journaux visibles dans Cloudflare (onglet Logs)
+}

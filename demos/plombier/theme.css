@@ -1,0 +1,4 @@
+body { --bg:#ffffff; --text:#0c1a2b; --soft:#334155; --link:#075985; --focus:#0284c7;
+  --top-bg:#075985; --top-text:#ffffff; --cta-bg:#facc15; --cta-text:#0c1a2b;
+  --hero-bg:linear-gradient(135deg,#075985 0%,#0c4a6e 100%); --hero-text:#ffffff; --hero-soft:#e0f2fe; --hero-line:#7dd3fc;
+  --alt-bg:#f0f9ff; --card-bg:#ffffff; --line:#bae6fd; --accent-text:#075985; }

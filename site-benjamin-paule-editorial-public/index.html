@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benjamin Paule · Création de sites web pour artisans et commerces</title>
+  <meta name="description" content="Je crée des sites vitrines soignés, rapides et bien référencés pour les artisans, commerces et indépendants. Maquette gratuite et sans engagement.">
+  <link rel="canonical" href="https://benjamin-paule.me/">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Benjamin Paule">
+  <meta property="og:url" content="https://benjamin-paule.me/">
+  <meta property="og:title" content="Benjamin Paule · Création de sites web pour artisans et commerces">
+  <meta property="og:description" content="Des sites vitrines soignés, rapides et bien référencés. Maquette gratuite et sans engagement.">
+  <meta property="og:image" content="https://benjamin-paule.me/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Benjamin Paule, création de sites web pour artisans et commerces">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/img/work/melodie-des-sens-hero.webp" as="image" type="image/webp" media="(min-width: 701px)">
+  <link rel="preload" href="/assets/img/work/melodie-des-sens-mh.webp" as="image" type="image/webp" media="(max-width: 700px)">
+  <link rel="stylesheet" href="/assets/css/editorial.css">
+  <!-- Animations : GSAP + ScrollTrigger + Lenis (défilement doux), tous hébergés sur le site -->
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/editorial.js" type="module"></script>
+</head>
+<body>
+  <!-- Intro d'ouverture : visible uniquement avec JavaScript, un clic la passe -->
+  <div class="intro" data-intro aria-hidden="true">
+    <div class="intro-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="intro-center"><div><p class="intro-name" data-intro-name>Benjamin Paule</p><p class="intro-tag mono">Sites web · Orange, Vaucluse</p></div></div>
+    <p class="intro-skip mono">Cliquer pour passer</p>
+    <p class="intro-count mono" data-intro-count>000</p>
+    <span class="intro-line" data-intro-line></span>
+  </div>
+  <div class="cursor" data-cursor aria-hidden="true"></div>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header site-header--overlay">
+    <div class="header-inner">
+      <a class="logo" href="/">Benjamin Paule</a>
+      <nav class="header-nav" aria-label="Raccourcis">
+        <a href="#realisations">Réalisations</a>
+        <a href="#services">Services</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#avis">Avis</a>
+      </nav>
+      <div class="header-actions">
+        <a class="pill pill-small" data-magnetic href="#contact" data-umami-event="cta-devis" data-umami-event-position="header">Demander un devis</a>
+        <a class="menu-toggle" href="#menu" data-menu-toggle>
+          <span class="visually-hidden">Menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============ HERO : séquence lente de maquettes, transition WebGL ============ -->
+    <section class="hero" aria-labelledby="titre-hero">
+      <div class="hero-media" data-hero-media>
+        <div class="hero-stack" data-hero-stack>
+          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/melodie-des-sens-mh.webp" width="780" height="1440"><img class="is-active" src="/assets/img/work/melodie-des-sens-hero.webp" width="1440" height="900" alt="" data-name="Mélodie des Sens" data-kind="Institut de beauté"></picture>
+          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/au-petit-patio-mh.webp" width="780" height="1440"><img src="/assets/img/work/au-petit-patio-hero.webp" width="1440" height="900" alt="" data-name="Au Petit Patio" data-kind="Restaurant"></picture>
+          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/le-riad-mh.webp" width="780" height="1440"><img src="/assets/img/work/le-riad-hero.webp" width="1440" height="900" alt="" data-name="Le Riad" data-kind="Restaurant"></picture>
+          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/cabanis-mh.webp" width="780" height="1440"><img src="/assets/img/work/cabanis-hero.webp" width="1440" height="900" alt="" data-name="Cabanis" data-kind="Pâtisserie"></picture>
+          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/carrosserie-ponce-mh.webp" width="780" height="1440"><img src="/assets/img/work/carrosserie-ponce-hero.webp" width="1440" height="900" alt="" data-name="Carrosserie Ponce" data-kind="Carrosserie"></picture>
+        </div>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-scan" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-copy" data-hero-copy>
+        <p class="hero-kicker"><span class="dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+        <h1 id="titre-hero" class="hero-title">
+          <span class="visually-hidden">Des sites web qui donnent envie d'entrer.</span>
+          <span class="line" aria-hidden="true"><span>Des sites web qui</span></span>
+          <span class="line" aria-hidden="true"><span class="word" data-words-cycle="captivent.|donnent envie d'entrer.|vous ressemblent.|font venir des clients.">donnent envie d'entrer.</span></span>
+        </h1>
+        <p class="hero-lead">Création de sites vitrines pour artisans, commerces et indépendants. Une maquette gratuite avant de décider.</p>
+        <div class="hero-ctas">
+          <a class="pill pill-glow" href="#contact" data-magnetic data-umami-event="cta-devis" data-umami-event-position="hero">Recevoir ma maquette gratuite</a>
+          <a class="pill pill-ghost" href="#realisations" data-magnetic>Voir les réalisations</a>
+        </div>
+      </div>
+
+      <p class="hero-caption"><span data-hero-name>Mélodie des Sens</span> <span class="hero-caption-kind" data-hero-kind>Institut de beauté</span></p>
+      <a class="hero-cue" href="#realisations"><span class="visually-hidden">Voir les réalisations</span><span class="hero-cue-line" aria-hidden="true"></span></a>
+    </section>
+
+    <!-- ============ PRODUITS : Mac et iPhone épinglés, écrans qui défilent ============ -->
+    <section id="realisations" class="showcase" aria-labelledby="titre-realisations">
+      <div class="showcase-head">
+        <h2 id="titre-realisations" class="display" data-decode>Sur grand écran.<br><span class="muted">Et dans la poche.</span></h2>
+        <p class="lede">Chaque site est dessiné deux fois : pour l'ordinateur, et pour le téléphone, où vos clients vous cherchent d'abord.</p>
+      </div>
+
+      <div class="stage" data-stage>
+        <div class="stage-inner">
+          <div class="devices">
+            <div class="mac" data-mac>
+              <div class="mac-lid">
+                <div class="mac-screen">
+                  <div class="layer" data-layer><img src="/assets/img/work/au-petit-patio-d.webp" width="960" height="2000" alt="Maquette du site Au Petit Patio, restaurant à Orange, affichée sur un ordinateur."></div>
+                  <div class="layer" data-layer><img src="/assets/img/work/cabanis-d.webp" width="960" height="2000" alt="Maquette du site de la pâtisserie Cabanis, affichée sur un ordinateur." loading="lazy"></div>
+                  <div class="layer" data-layer><img src="/assets/img/work/lud-eau-plomberie-d.webp" width="960" height="1650" alt="Maquette du site du plombier Lud'Eau Plomberie, affichée sur un ordinateur." loading="lazy"></div>
+                </div>
+              </div>
+              <div class="mac-base" aria-hidden="true"></div>
+            </div>
+            <div class="iphone" data-iphone>
+              <div class="iphone-screen">
+                <div class="layer" data-layer><img src="/assets/img/work/au-petit-patio-m.webp" width="390" height="824" alt=""></div>
+                <div class="layer" data-layer><img src="/assets/img/work/cabanis-m.webp" width="390" height="824" alt="" loading="lazy"></div>
+                <div class="layer" data-layer><img src="/assets/img/work/lud-eau-plomberie-m.webp" width="390" height="824" alt="" loading="lazy"></div>
+              </div>
+              <span class="iphone-island" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <ol class="stage-captions">
+            <li class="cap" data-cap><span class="cap-name">Au Petit Patio</span><span class="cap-kind">Restaurant · Orange</span></li>
+            <li class="cap" data-cap><span class="cap-name">Cabanis</span><span class="cap-kind">Pâtisserie · Orange</span></li>
+            <li class="cap" data-cap><span class="cap-name">Lud'Eau Plomberie</span><span class="cap-kind">Plombier · Orange</span></li>
+          </ol>
+          <p class="stage-note">Maquettes non officielles, proposées à ces commerces.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIE : piste horizontale, distorsion WebGL au survol ============ -->
+    <section id="galerie" class="gallery" aria-labelledby="titre-galerie">
+      <div class="gallery-pin" data-gallery-pin>
+        <div class="gallery-head">
+          <h2 id="titre-galerie" class="display-s" data-decode>Neuf commerces,<br>neuf caractères.</h2>
+          <p class="lede">Aucun modèle tout fait : chaque maquette part du métier, du quartier et des clients.</p>
+        </div>
+        <ul class="gallery-track" data-gallery-track>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/a-la-maison-t.webp" width="720" height="450" alt="Maquette du restaurant À la maison : ardoise du jour et carte." loading="lazy"></div><figcaption><span>À la maison</span><span>Restaurant</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/melodie-des-sens-t.webp" width="720" height="450" alt="Maquette de l'institut Mélodie des Sens : fond prune et titre fin." loading="lazy"></div><figcaption><span>Mélodie des Sens</span><span>Institut de beauté</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/apprenti-fleuriste-t.webp" width="720" height="450" alt="Maquette de L'Apprenti Fleuriste : vert profond et bouquet illustré." loading="lazy"></div><figcaption><span>L'Apprenti Fleuriste</span><span>Fleuriste</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/le-riad-t.webp" width="720" height="450" alt="Maquette du restaurant Le Riad : bleu nuit, or et arche ornée." loading="lazy"></div><figcaption><span>Le Riad</span><span>Restaurant</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/carrosserie-ponce-t.webp" width="720" height="450" alt="Maquette de la Carrosserie Ponce : nuancier de peintures." loading="lazy"></div><figcaption><span>Carrosserie Ponce</span><span>Carrosserie</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/cretallaz-t.webp" width="720" height="450" alt="Maquette de Cretallaz : climatisation et pompe à chaleur." loading="lazy"></div><figcaption><span>Cretallaz</span><span>Climatisation</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/au-petit-patio-t.webp" width="720" height="450" alt="Maquette du restaurant Au Petit Patio : motif de carreaux." loading="lazy"></div><figcaption><span>Au Petit Patio</span><span>Restaurant</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/cabanis-t.webp" width="720" height="450" alt="Maquette de la pâtisserie Cabanis : entremets illustré." loading="lazy"></div><figcaption><span>Cabanis</span><span>Pâtisserie</span></figcaption></figure></li>
+          <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/lud-eau-plomberie-t.webp" width="720" height="450" alt="Maquette de Lud'Eau Plomberie : titre en gros caractères sur fond sombre." loading="lazy"></div><figcaption><span>Lud'Eau Plomberie</span><span>Plombier</span></figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES : liste éditoriale, aperçu qui suit la souris ============ -->
+    <section id="services" class="services" aria-labelledby="titre-services">
+      <div class="wrap">
+        <h2 id="titre-services" class="display-s" data-decode>Ce que je fais<br>pour vous.</h2>
+        <ul class="svc-list">
+          <li class="svc" data-svc data-preview="/assets/img/work/le-riad-t.webp">
+            <h3 class="svc-title">Site vitrine</h3>
+            <p class="svc-text">Trois à cinq pages pour présenter votre activité, vos services et vos horaires, avec un contact en un geste.</p>
+          </li>
+          <li class="svc" data-svc data-preview="/assets/img/work/carrosserie-ponce-t.webp">
+            <h3 class="svc-title">Refonte</h3>
+            <p class="svc-text">Votre site est ancien, lent ou mal affiché sur mobile ? Je le modernise en gardant ce qui fonctionne déjà.</p>
+          </li>
+          <li class="svc" data-svc data-preview="/assets/img/work/cretallaz-t.webp">
+            <h3 class="svc-title">Référencement local</h3>
+            <p class="svc-text">Balises, contenus et fiche Google soignés, pour apparaître quand on cherche votre métier dans votre ville.</p>
+          </li>
+          <li class="svc" data-svc data-preview="/assets/img/work/a-la-maison-t.webp">
+            <h3 class="svc-title">Suivi</h3>
+            <p class="svc-text">Horaires, tarifs, photos : je mets votre site à jour quand votre activité change.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="svc-preview" data-svc-preview aria-hidden="true"><img src="/assets/img/work/le-riad-t.webp" width="720" height="450" alt=""></div>
+    </section>
+
+    <!-- Interlude : image révélée depuis une fente centrale -->
+    <div class="interlude" aria-hidden="true">
+      <div class="interlude-mask" data-interlude>
+        <img src="/assets/img/work/le-riad-hero.webp" width="1440" height="900" alt="" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ============ À PROPOS ============ -->
+    <section id="a-propos" class="about" aria-labelledby="titre-about">
+      <div class="wrap">
+        <h2 id="titre-about" class="visually-hidden">À propos</h2>
+        <p class="about-text" data-words>Je m'appelle Benjamin Paule. Je crée des sites pour les artisans et les commerces, depuis Orange, dans le Vaucluse. Un seul interlocuteur, du premier croquis à la mise en ligne.</p>
+        <dl class="facts">
+          <div><dt>Avant de décider</dt><dd>Une maquette gratuite de votre page d'accueil.</dd></div>
+          <div><dt>Pendant</dt><dd>Un seul contact, qui répond vite et simplement.</dd></div>
+          <div><dt>Après</dt><dd>Un site rapide, sécurisé et conforme au RGPD.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ TÉMOIGNAGES ============
+         ⚠ EXEMPLES À REMPLACER par de vrais avis clients (avec leur accord) avant la mise en ligne.
+         Ne jamais publier un faux avis : c'est interdit (pratique commerciale trompeuse).
+         Pour remplacer : changez le texte du <blockquote>, le nom, et retirez class="is-placeholder" + la ligne placeholder-tag. -->
+    <section id="avis" class="reviews" aria-labelledby="titre-avis">
+      <div class="wrap">
+        <h2 id="titre-avis" class="display-s" data-decode>Ils en parlent.</h2>
+        <ul class="review-list">
+          <li class="review is-placeholder">
+            <p class="placeholder-tag">Emplacement à remplacer</p>
+            <blockquote><p>Ici, quelques phrases d'un vrai client sur le projet : ce qui a changé pour lui depuis la mise en ligne.</p></blockquote>
+            <p class="review-by">Prénom Nom<span>Métier, ville</span></p>
+          </li>
+          <li class="review is-placeholder">
+            <p class="placeholder-tag">Emplacement à remplacer</p>
+            <blockquote><p>Un deuxième avis réel, idéalement sur la rapidité et la simplicité des échanges.</p></blockquote>
+            <p class="review-by">Prénom Nom<span>Métier, ville</span></p>
+          </li>
+          <li class="review is-placeholder">
+            <p class="placeholder-tag">Emplacement à remplacer</p>
+            <blockquote><p>Un troisième avis réel, par exemple sur les appels ou réservations reçus grâce au site.</p></blockquote>
+            <p class="review-by">Prénom Nom<span>Métier, ville</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CTA + FORMULAIRE (même fonctionnement qu'avant : /api/contact + Turnstile) ============ -->
+    <section id="contact" class="contact" aria-labelledby="titre-contact">
+      <div class="wrap contact-grid">
+        <div class="cta" data-cta>
+          <h2 id="titre-contact" class="cta-title" data-decode>Parlons de<br>votre site.</h2>
+          <p class="lede">Décrivez votre activité en quelques lignes. Je vous réponds avec une première maquette de votre page d'accueil, gratuitement et sans engagement.</p>
+          <p class="small">Vos informations servent uniquement à répondre à votre demande. <a href="/confidentialite">En savoir plus sur vos données</a>.</p>
+        </div>
+
+        <form class="form" id="contact-form" action="/api/contact" method="post" novalidate data-turnstile-sitekey="0x4AAAAAAFUtsdWOqS4OO7_q">
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Nom et prénom</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="e-name">
+              <p class="field-error" id="e-name"></p>
+            </div>
+            <div class="field">
+              <label for="f-company">Entreprise <span class="opt">(facultatif)</span></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="120" aria-describedby="e-company">
+              <p class="field-error" id="e-company"></p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" aria-describedby="e-email">
+              <p class="field-error" id="e-email"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Téléphone <span class="opt">(facultatif)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="e-phone">
+              <p class="field-error" id="e-phone"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-website">Site actuel <span class="opt">(facultatif)</span></label>
+            <input id="f-website" name="current_site" type="url" inputmode="url" maxlength="200" placeholder="https://" aria-describedby="e-website">
+            <p class="field-error" id="e-website"></p>
+          </div>
+          <div class="field">
+            <label for="f-message">Votre activité et votre besoin</label>
+            <textarea id="f-message" name="message" required minlength="20" maxlength="3000" aria-describedby="e-message"></textarea>
+            <p class="field-error" id="e-message"></p>
+          </div>
+
+          <!-- Piège à robots : champ invisible pour les humains, rempli par les robots -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-fax">Ne pas remplir</label>
+            <input id="f-fax" name="fax" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field checkbox">
+            <input id="f-consent" name="consent" type="checkbox" required aria-describedby="e-consent">
+            <label for="f-consent">J'accepte que mes informations soient utilisées pour répondre à ma demande, conformément à la <a href="/confidentialite">politique de confidentialité</a>.</label>
+          </div>
+          <p class="field-error" id="e-consent"></p>
+
+          <div class="turnstile-box" id="turnstile"></div>
+
+          <button class="pill pill-block" type="submit" data-umami-event="formulaire-envoi">Envoyer ma demande</button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navigation (mobile) : panneau ouvert par le bouton Menu ; sans JavaScript, simple liste en bas de page -->
+  <nav id="menu" class="menu-panel" aria-label="Navigation principale">
+    <div class="menu-head">
+      <p class="menu-title">Menu</p>
+      <button type="button" class="menu-close" data-menu-close hidden>
+        <span class="visually-hidden">Fermer le menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="menu-list">
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Benjamin Paule · Création de sites web</p>
+      <ul>
+        <li><a href="/mentions-legales">Mentions légales</a></li>
+        <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
+        <li><a href="/cgu">CGU</a></li>
+        <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+    <h2 id="consent-title">Mesure d'audience</h2>
+    <p>J'aimerais mesurer la fréquentation de ce site avec un outil sans cookie publicitaire, pour savoir quelles pages sont utiles. Vous pouvez accepter ou refuser, et changer d'avis à tout moment. <a href="/confidentialite#cookies">En savoir plus</a></p>
+    <div class="consent-actions">
+      <button type="button" class="pill pill-ghost" data-consent="denied">Refuser</button>
+      <button type="button" class="pill pill-ghost" data-consent="granted">Accepter</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Fichiers de prospection : coordonnées de prospects, ne jamais publier
+prospection/
+
+# Wrangler / Node
+.wrangler/
+node_modules/
+.dev.vars

@@ -176,7 +176,7 @@ function init() {
   gsap.from('.facts > div', { opacity: 0, y: 24, duration: 1.2, stagger: 0.1, ease: 'expo.out', scrollTrigger: { trigger: '.facts', start: 'top 85%' } });
 
   /* ---------- Témoignages et CTA ---------- */
-  gsap.from('.review', { opacity: 0, y: 40, duration: 1.3, stagger: 0.12, ease: 'expo.out', scrollTrigger: { trigger: '.review-list', start: 'top 82%' } });
+  if ($('.review-list')) gsap.from('.review', { opacity: 0, y: 40, duration: 1.3, stagger: 0.12, ease: 'expo.out', scrollTrigger: { trigger: '.review-list', start: 'top 82%' } });
   gsap.fromTo('.cta-title', { yPercent: 30, opacity: 0.2 }, { yPercent: 0, opacity: 1, ease: 'none', scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'top 30%', scrub: true } });
 
   if (finePointer) { galleryHover(); cursorAndMagnets(); }

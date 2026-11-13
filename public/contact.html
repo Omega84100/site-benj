@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Benjamin Paule</title>
+  <meta name="description" content="Demandez une maquette gratuite de votre site : décrivez votre activité, je vous réponds rapidement.">
+  <link rel="canonical" href="https://benjamin-paule.me/contact">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Benjamin Paule">
+  <meta property="og:url" content="https://benjamin-paule.me/contact">
+  <meta property="og:title" content="Contact · Benjamin Paule">
+  <meta property="og:description" content="Demandez une maquette gratuite de votre site : décrivez votre activité, je vous réponds rapidement.">
+  <meta property="og:image" content="https://benjamin-paule.me/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Benjamin Paule, création de sites web pour artisans et commerces">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/editorial.css">
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/pages.js" type="module"></script>
+</head>
+<body>
+  <div class="cursor" data-cursor aria-hidden="true"></div>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header site-header--overlay">
+    <div class="header-inner">
+      <a class="logo" href="/">Benjamin Paule</a>
+      <nav class="header-nav" aria-label="Pages">
+        <a href="/realisations">Réalisations</a>
+        <a href="/offres">Offres</a>
+        <a href="/a-propos">À propos</a>
+        <a href="/contact" aria-current="page">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="pill pill-small" href="/contact" data-umami-event="cta-devis" data-umami-event-position="header">Maquette gratuite</a>
+        <a class="menu-toggle" href="#menu" data-menu-toggle>
+          <span class="visually-hidden">Menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker mono">04 / Contact</p>
+        <h1 class="page-title" data-decode>Parlons de<br><span class="grad">votre site.</span></h1>
+        <p class="lede">Décrivez votre activité en quelques lignes. Je vous réponds avec une première maquette de votre page d'accueil, gratuitement et sans engagement.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-page">
+      <div class="wrap contact-grid">
+        <div class="cta">
+          <h2 class="display-s" data-decode>Une question ?<br><span class="muted">Écrivez-moi.</span></h2>
+          <dl class="contact-info">
+            <div><dt>E-mail</dt><dd><a href="mailto:contact@benjamin-paule.me">contact@benjamin-paule.me</a></dd></div>
+            <div><dt>Basé à</dt><dd>Orange, Vaucluse</dd></div>
+            <div><dt>Zone</dt><dd>Toute la France, à distance</dd></div>
+          </dl>
+          <p class="small">Vos informations servent uniquement à répondre à votre demande. <a href="/confidentialite">En savoir plus sur vos données</a>.</p>
+        </div>
+
+        <form class="form" id="contact-form" action="/api/contact" method="post" novalidate data-turnstile-sitekey="0x4AAAAAAFUtsdWOqS4OO7_q">
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Nom et prénom</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="e-name">
+              <p class="field-error" id="e-name"></p>
+            </div>
+            <div class="field">
+              <label for="f-company">Entreprise <span class="opt">(facultatif)</span></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="120" aria-describedby="e-company">
+              <p class="field-error" id="e-company"></p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" aria-describedby="e-email">
+              <p class="field-error" id="e-email"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Téléphone <span class="opt">(facultatif)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="e-phone">
+              <p class="field-error" id="e-phone"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-website">Site actuel <span class="opt">(facultatif)</span></label>
+            <input id="f-website" name="current_site" type="url" inputmode="url" maxlength="200" placeholder="https://" aria-describedby="e-website">
+            <p class="field-error" id="e-website"></p>
+          </div>
+          <div class="field">
+            <label for="f-message">Votre activité et votre besoin</label>
+            <textarea id="f-message" name="message" required minlength="20" maxlength="3000" aria-describedby="e-message"></textarea>
+            <p class="field-error" id="e-message"></p>
+          </div>
+
+          <!-- Piège à robots : champ invisible pour les humains, rempli par les robots -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-fax">Ne pas remplir</label>
+            <input id="f-fax" name="fax" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field checkbox">
+            <input id="f-consent" name="consent" type="checkbox" required aria-describedby="e-consent">
+            <label for="f-consent">J'accepte que mes informations soient utilisées pour répondre à ma demande, conformément à la <a href="/confidentialite">politique de confidentialité</a>.</label>
+          </div>
+          <p class="field-error" id="e-consent"></p>
+
+          <div class="turnstile-box" id="turnstile"></div>
+
+          <button class="pill pill-block" type="submit" data-umami-event="formulaire-envoi">Envoyer ma demande</button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navigation (mobile) : panneau ouvert par le bouton Menu ; sans JavaScript, simple liste en bas de page -->
+  <nav id="menu" class="menu-panel" aria-label="Navigation principale">
+    <div class="menu-head">
+      <p class="menu-title">Menu</p>
+      <button type="button" class="menu-close" data-menu-close hidden>
+        <span class="visually-hidden">Fermer le menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="menu-list">
+      <li><a href="/"><span class="mono">01</span>Accueil</a></li>
+      <li><a href="/realisations"><span class="mono">02</span>Réalisations</a></li>
+      <li><a href="/offres"><span class="mono">03</span>Offres</a></li>
+      <li><a href="/a-propos"><span class="mono">04</span>À propos</a></li>
+      <li><a href="/contact" aria-current="page"><span class="mono">05</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="/">Benjamin Paule</a>
+          <p>Sites vitrines pour artisans, commerces et indépendants. Depuis Orange, dans le Vaucluse, pour toute la France.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="/realisations">Réalisations</a></li>
+            <li><a href="/offres">Offres et tarifs</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:contact@benjamin-paule.me">contact@benjamin-paule.me</a></li>
+            <li><a href="/contact">Demander une maquette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Légal</h2>
+          <ul>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+            <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
+            <li><a href="/cgu">CGU</a></li>
+            <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Benjamin Paule · Entrepreneur individuel · SIRET 995 063 609 00029</p>
+        <p><span class="dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+    <h2 id="consent-title">Mesure d'audience</h2>
+    <p>J'aimerais mesurer la fréquentation de ce site avec un outil sans cookie publicitaire, pour savoir quelles pages sont utiles. Vous pouvez accepter ou refuser, et changer d'avis à tout moment. <a href="/confidentialite#cookies">En savoir plus</a></p>
+    <div class="consent-actions">
+      <button type="button" class="pill pill-ghost" data-consent="denied">Refuser</button>
+      <button type="button" class="pill pill-ghost" data-consent="granted">Accepter</button>
+    </div>
+  </div>
+</body>
+</html>

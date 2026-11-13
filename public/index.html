@@ -52,13 +52,14 @@
   <header class="site-header site-header--overlay">
     <div class="header-inner">
       <a class="logo" href="/">Benjamin Paule</a>
-      <nav class="header-nav" aria-label="Raccourcis">
-        <a href="#realisations">Réalisations</a>
-        <a href="#services">Services</a>
-        <a href="#a-propos">À propos</a>
+      <nav class="header-nav" aria-label="Pages">
+        <a href="/realisations">Réalisations</a>
+        <a href="/offres">Offres</a>
+        <a href="/a-propos">À propos</a>
+        <a href="/contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <a class="pill pill-small" data-magnetic href="#contact" data-umami-event="cta-devis" data-umami-event-position="header">Demander un devis</a>
+        <a class="pill pill-small" href="/contact" data-umami-event="cta-devis" data-umami-event-position="header">Maquette gratuite</a>
         <a class="menu-toggle" href="#menu" data-menu-toggle>
           <span class="visually-hidden">Menu</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
@@ -92,8 +93,8 @@
         </h1>
         <p class="hero-lead">Création de sites vitrines pour artisans, commerces et indépendants. Une maquette gratuite avant de décider.</p>
         <div class="hero-ctas">
-          <a class="pill pill-glow" href="#contact" data-magnetic data-umami-event="cta-devis" data-umami-event-position="hero">Recevoir ma maquette gratuite</a>
-          <a class="pill pill-ghost" href="#realisations" data-magnetic>Voir les réalisations</a>
+          <a class="pill pill-glow" href="/contact" data-magnetic data-umami-event="cta-devis" data-umami-event-position="hero">Recevoir ma maquette gratuite</a>
+          <a class="pill pill-ghost" href="/realisations" data-magnetic>Voir les réalisations</a>
         </div>
       </div>
 
@@ -160,6 +161,7 @@
           <li class="g-item" data-cursor-view><figure><div class="g-media" data-clip><img src="/assets/img/work/lud-eau-plomberie-t.webp" width="720" height="450" alt="Maquette de Lud'Eau Plomberie : titre en gros caractères sur fond sombre." loading="lazy"></div><figcaption><span>Lud'Eau Plomberie</span><span>Plombier</span></figcaption></figure></li>
         </ul>
       </div>
+      <div class="gallery-after"><a class="more-link" href="/realisations">Toutes les réalisations en détail</a></div>
     </section>
 
     <!-- ============ SERVICES : liste éditoriale, aperçu qui suit la souris ============ -->
@@ -184,6 +186,7 @@
             <p class="svc-text">Horaires, tarifs, photos : je mets votre site à jour quand votre activité change.</p>
           </li>
         </ul>
+        <a class="more-link" href="/offres">Voir les offres et les tarifs</a>
       </div>
       <div class="svc-preview" data-svc-preview aria-hidden="true"><img src="/assets/img/work/le-riad-t.webp" width="720" height="450" alt=""></div>
     </section>
@@ -205,6 +208,7 @@
           <div><dt>Pendant</dt><dd>Un seul contact, qui répond vite et simplement.</dd></div>
           <div><dt>Après</dt><dd>Un site rapide, sécurisé et conforme au RGPD.</dd></div>
         </dl>
+        <a class="more-link" href="/a-propos">En savoir plus sur moi</a>
       </div>
     </section>
 
@@ -286,22 +290,51 @@
       </button>
     </div>
     <ul class="menu-list">
-      <li><a href="#realisations">Réalisations</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#a-propos">À propos</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/" aria-current="page"><span class="mono">01</span>Accueil</a></li>
+      <li><a href="/realisations"><span class="mono">02</span>Réalisations</a></li>
+      <li><a href="/offres"><span class="mono">03</span>Offres</a></li>
+      <li><a href="/a-propos"><span class="mono">04</span>À propos</a></li>
+      <li><a href="/contact"><span class="mono">05</span>Contact</a></li>
     </ul>
   </nav>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 2026 Benjamin Paule · Création de sites web</p>
-      <ul>
-        <li><a href="/mentions-legales">Mentions légales</a></li>
-        <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
-        <li><a href="/cgu">CGU</a></li>
-        <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
-      </ul>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="/">Benjamin Paule</a>
+          <p>Sites vitrines pour artisans, commerces et indépendants. Depuis Orange, dans le Vaucluse, pour toute la France.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="/realisations">Réalisations</a></li>
+            <li><a href="/offres">Offres et tarifs</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:contact@benjamin-paule.me">contact@benjamin-paule.me</a></li>
+            <li><a href="/contact">Demander une maquette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Légal</h2>
+          <ul>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+            <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
+            <li><a href="/cgu">CGU</a></li>
+            <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Benjamin Paule · Entrepreneur individuel · SIRET 995 063 609 00029</p>
+        <p><span class="dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+      </div>
     </div>
   </footer>
 

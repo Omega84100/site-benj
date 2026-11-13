@@ -6,7 +6,7 @@
   <title>Conditions générales d'utilisation · Benjamin Paule</title>
   <meta name="description" content="Conditions générales d'utilisation du site benjamin-paule.me : accès, contenus, formulaire de contact et responsabilité.">
   <link rel="canonical" href="https://benjamin-paule.me/cgu">
-  <meta name="theme-color" content="#07080f">
+  <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -24,29 +24,46 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preload" href="/assets/fonts/open-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/editorial.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/pages.js" type="module"></script>
 </head>
 <body>
+  <div class="cursor" data-cursor aria-hidden="true"></div>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/">
-        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g-logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8432e"/><stop offset=".55" stop-color="#cf2a6c"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#g-logo)"/><text x="32" y="42" text-anchor="middle" font-family="Space Grotesk Variable, system-ui, sans-serif" font-size="26" font-weight="700" fill="#fff">BP</text></svg>
-        <span class="logo-text">Benjamin Paule</span>
-      </a>
-      <a class="btn btn-small" href="/#contact" data-umami-event="cta-maquette" data-umami-event-position="cgu"><span class="hide-sm">Recevoir ma maquette gratuite</span><span class="show-sm">Maquette gratuite</span></a>
+
+  <header class="site-header site-header--overlay">
+    <div class="header-inner">
+      <a class="logo" href="/">Benjamin Paule</a>
+      <nav class="header-nav" aria-label="Pages">
+        <a href="/realisations">Réalisations</a>
+        <a href="/offres">Offres</a>
+        <a href="/a-propos">À propos</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="pill pill-small" href="/contact" data-umami-event="cta-devis" data-umami-event-position="header">Maquette gratuite</a>
+        <a class="menu-toggle" href="#menu" data-menu-toggle>
+          <span class="visually-hidden">Menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <main id="contenu" class="legal">
-    <div class="container">
-      <h1>Conditions générales d'utilisation</h1>
-      <p class="small">Dernière mise à jour : 30 septembre 2026</p>
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="kicker mono">Légal</p>
+        <h1 class="page-title" data-decode>Conditions générales d'utilisation</h1>
+        <p class="updated mono">Dernière mise à jour : 30 septembre 2026</p>
+      </div>
+    </section>
 
-      <h2>1. Objet</h2>
+    <section class="legal-body">
+      <div class="wrap prose">
+<h2>1. Objet</h2>
       <p>Les présentes conditions générales d'utilisation (CGU) fixent les règles d'accès et d'utilisation du site benjamin-paule.me, édité par Benjamin Paule (voir les <a href="/mentions-legales">mentions légales</a>). En naviguant sur le site, vous acceptez ces CGU.</p>
 
       <h2>2. Accès au site</h2>
@@ -54,7 +71,7 @@
 
       <h2>3. Contenu du site</h2>
       <p>Les informations publiées sont données à titre indicatif et peuvent évoluer. Elles ne constituent pas une offre contractuelle : toute prestation fait l'objet d'un devis écrit et de conditions générales de vente propres.</p>
-      <p>Les sites de la rubrique « Réalisations » sont des démonstrations pour des entreprises fictives. Leurs noms, coordonnées et contenus sont inventés.</p>
+      <p>Les sites de la rubrique « Réalisations » sont des maquettes non officielles, proposées à des commerces existants pour leur présenter un projet de site. Elles ne sont pas publiées en leur nom, et leurs noms et marques appartiennent à leurs propriétaires.</p>
 
       <h2>4. Utilisation du formulaire de contact</h2>
       <p>Le formulaire sert uniquement à demander une maquette, un devis ou un renseignement. Il est interdit de l'utiliser pour envoyer des messages publicitaires, illicites, injurieux ou automatisés. Les envois abusifs peuvent être bloqués.</p>
@@ -73,17 +90,65 @@
 
       <h2>9. Modification et droit applicable</h2>
       <p>Ces CGU peuvent être modifiées à tout moment ; la version en ligne est celle qui s'applique. Elles sont soumises au droit français. En cas de litige, une solution amiable sera recherchée avant toute action devant les tribunaux compétents.</p>
-    </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Navigation (mobile) : panneau ouvert par le bouton Menu ; sans JavaScript, simple liste en bas de page -->
+  <nav id="menu" class="menu-panel" aria-label="Navigation principale">
+    <div class="menu-head">
+      <p class="menu-title">Menu</p>
+      <button type="button" class="menu-close" data-menu-close hidden>
+        <span class="visually-hidden">Fermer le menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ul class="menu-list">
+      <li><a href="/"><span class="mono">01</span>Accueil</a></li>
+      <li><a href="/realisations"><span class="mono">02</span>Réalisations</a></li>
+      <li><a href="/offres"><span class="mono">03</span>Offres</a></li>
+      <li><a href="/a-propos"><span class="mono">04</span>À propos</a></li>
+      <li><a href="/contact"><span class="mono">05</span>Contact</a></li>
+    </ul>
+  </nav>
+
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Benjamin Paule · Création de sites web</p>
-      <ul>
-        <li><a href="/mentions-legales">Mentions légales</a></li>
-        <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
-        <li><a href="/cgu">CGU</a></li>
-        <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
-      </ul>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="/">Benjamin Paule</a>
+          <p>Sites vitrines pour artisans, commerces et indépendants. Depuis Orange, dans le Vaucluse, pour toute la France.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="/realisations">Réalisations</a></li>
+            <li><a href="/offres">Offres et tarifs</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:contact@benjamin-paule.me">contact@benjamin-paule.me</a></li>
+            <li><a href="/contact">Demander une maquette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Légal</h2>
+          <ul>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+            <li><a href="/confidentialite">Confidentialité (RGPD)</a></li>
+            <li><a href="/cgu">CGU</a></li>
+            <li><button type="button" class="link-btn" data-open-consent>Gérer les cookies</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Benjamin Paule · Entrepreneur individuel · SIRET 995 063 609 00029</p>
+        <p><span class="dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+      </div>
     </div>
   </footer>
 
@@ -91,8 +156,8 @@
     <h2 id="consent-title">Mesure d'audience</h2>
     <p>J'aimerais mesurer la fréquentation de ce site avec un outil sans cookie publicitaire, pour savoir quelles pages sont utiles. Vous pouvez accepter ou refuser, et changer d'avis à tout moment. <a href="/confidentialite#cookies">En savoir plus</a></p>
     <div class="consent-actions">
-      <button type="button" class="btn btn-ghost" data-consent="denied">Refuser</button>
-      <button type="button" class="btn btn-ghost" data-consent="granted">Accepter</button>
+      <button type="button" class="pill pill-ghost" data-consent="denied">Refuser</button>
+      <button type="button" class="pill pill-ghost" data-consent="granted">Accepter</button>
     </div>
   </div>
 </body>

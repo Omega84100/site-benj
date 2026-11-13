@@ -75,3 +75,39 @@ if (chips.length) {
     if (status) status.textContent = n + (n > 1 ? ' maquettes affichées' : ' maquette affichée');
   }));
 }
+
+/* Pages d'offre : estimation qui suit les options cochées, puis demande pré-remplie */
+const summary = document.querySelector('[data-summary]');
+if (summary) {
+  const checks = $$('.opt-check');
+  const lines = summary.querySelector('[data-summary-lines]');
+  const baseLine = lines.firstElementChild.cloneNode(true);
+  const send = summary.querySelector('[data-summary-send]');
+  const fmt = (n) => n.toLocaleString('fr-FR') + ' €';
+  const update = () => {
+    let once = +summary.dataset.baseOnce, month = +summary.dataset.baseMonth, quote = summary.dataset.baseQuote === '1';
+    lines.replaceChildren(baseLine.cloneNode(true));
+    const picked = [];
+    checks.filter((c) => c.checked).forEach((c) => {
+      once += +c.dataset.once; month += +c.dataset.month; if (c.dataset.quote === '1') quote = true;
+      const li = document.createElement('li');
+      const a = document.createElement('span'); a.textContent = '+ ' + c.value;
+      const b = document.createElement('span'); b.textContent = +c.dataset.once ? fmt(+c.dataset.once) : +c.dataset.month ? fmt(+c.dataset.month) + '/mois' : 'sur devis';
+      li.append(a, b); lines.append(li); picked.push(c.value);
+    });
+    summary.querySelector('[data-total-once]').textContent = fmt(once);
+    summary.querySelector('[data-total-month]').textContent = fmt(month);
+    summary.querySelector('[data-total-quote]').hidden = !quote;
+    const msg = `Bonjour, je suis intéressé par l'offre « ${summary.dataset.base} »` + (picked.length ? ` avec les options : ${picked.join(', ')}.` : '.') + ` Estimation : ${fmt(once)} une fois, ${fmt(month)} par mois${quote ? ', plus une partie sur devis' : ''}. Mon activité : `;
+    send.href = '/contact?demande=' + encodeURIComponent(msg) + '#contact-form';
+  };
+  checks.forEach((c) => c.addEventListener('change', update));
+  update();
+}
+
+/* Page contact : message pré-rempli depuis une page d'offre */
+const msgField = document.getElementById('f-message');
+if (msgField && !msgField.value) {
+  const d = new URLSearchParams(location.search).get('demande');
+  if (d) msgField.value = d.slice(0, 2000);
+}

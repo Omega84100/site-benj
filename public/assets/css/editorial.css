@@ -531,3 +531,4 @@ html.reveal-on [data-reveal]:not(.is-visible) { opacity: 0; transform: translate
 @media (prefers-reduced-motion: reduce) { .page-hero::after { animation: none; } }
 .filters[hidden] { display: none; }
 .section + .section-alt, .section-alt + .section { padding-top: clamp(80px, 13vh, 160px); }
+.checks strong { color: var(--ink); font-weight: 600; }

@@ -9,12 +9,14 @@ L'argument de vente : **une maquette gratuite de la page d'accueil avant de déc
 L'offre (prix, délais, contenu) est dans `offre.md` : les agents n'inventent rien qui n'y est pas.
 
 ## Agents (installés pour toutes les sessions)
-- `prospecteur` : trouve et qualifie les prospects → `prospection/prospects.csv`. Zone par défaut : Orange et alentours (Vaucluse).
+- `prospecteur` : trouve, qualifie et note sur 100 les prospects → `prospection/prospects.csv`, trié par score. Zone par défaut : Orange et alentours (Vaucluse).
+- `avis-google` : démo « réponse aux avis » pour un commerce qui ne répond pas à ses avis → `prospection/avis/<slug>/index.html` (imprimable en PDF) ; pour les clients signés, réponses à faire valider.
 - `maquettiste` : maquette personnalisée pour un prospect → `prospection/maquettes/<slug>/index.html`, en partant des démos de `public/demos/` (même structure, `demo.css` + un `theme.css` par métier).
 - `closer` : messages, relances, script d'appel, objections → `prospection/messages/<slug>.md`.
 - `hocs` : vérification GO/NO-GO avant toute annonce « c'est fait ».
 
-Chaîne type : prospecteur → maquettiste → hocs → closer → **Benjamin envoie lui-même**.
+Chaîne type : prospecteur → maquettiste (offre site) ou avis-google (offre avis) → hocs → closer → **Benjamin envoie lui-même**.
+Les réponses aux avis ne sont jamais publiées par Claude ; les avis négatifs passent par le gérant avant toute réponse.
 
 ## Règles
 - `prospection/` contient des coordonnées de prospects : il est dans `.gitignore`, ne jamais le commiter (le dépôt GitHub est public).

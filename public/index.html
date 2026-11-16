@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Benjamin Paule · Création de sites web pour artisans et commerces</title>
-  <meta name="description" content="Je crée des sites vitrines soignés, rapides et bien référencés pour les artisans, commerces et indépendants. Maquette gratuite et sans engagement.">
+  <meta name="description" content="Je crée des sites vitrines soignés, rapides et faciles à trouver sur Google pour les artisans, commerces et indépendants. Maquette gratuite et sans engagement.">
   <link rel="canonical" href="https://benjamin-paule.me/">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Benjamin Paule">
   <meta property="og:url" content="https://benjamin-paule.me/">
   <meta property="og:title" content="Benjamin Paule · Création de sites web pour artisans et commerces">
-  <meta property="og:description" content="Des sites vitrines soignés, rapides et bien référencés. Maquette gratuite et sans engagement.">
+  <meta property="og:description" content="Des sites vitrines soignés, rapides et faciles à trouver sur Google. Maquette gratuite et sans engagement.">
   <meta property="og:image" content="https://benjamin-paule.me/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -38,15 +38,6 @@
   <script src="/assets/js/editorial.js" type="module"></script>
 </head>
 <body>
-  <!-- Intro d'ouverture : visible uniquement avec JavaScript, un clic la passe -->
-  <div class="intro" data-intro aria-hidden="true">
-    <div class="intro-bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="intro-center"><div><p class="intro-name" data-intro-name>Benjamin Paule</p><p class="intro-tag mono">Sites web · Orange, Vaucluse</p></div></div>
-    <p class="intro-skip mono">Cliquer pour passer</p>
-    <p class="intro-count mono" data-intro-count>000</p>
-    <span class="intro-line" data-intro-line></span>
-  </div>
-  <div class="cursor" data-cursor aria-hidden="true"></div>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header site-header--overlay">
@@ -70,43 +61,46 @@
 
   <main id="contenu">
 
-    <!-- ============ HERO : séquence lente de maquettes, transition WebGL ============ -->
-    <section class="hero" aria-labelledby="titre-hero">
-      <div class="hero-media" data-hero-media>
-        <div class="hero-stack" data-hero-stack>
-          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/melodie-des-sens-mh.webp" width="780" height="1440"><img class="is-active" src="/assets/img/work/melodie-des-sens-hero.webp" width="1440" height="900" alt="" data-name="Mélodie des Sens" data-kind="Institut de beauté"></picture>
-          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/au-petit-patio-mh.webp" width="780" height="1440"><img src="/assets/img/work/au-petit-patio-hero.webp" width="1440" height="900" alt="" data-name="Au Petit Patio" data-kind="Restaurant"></picture>
-          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/le-riad-mh.webp" width="780" height="1440"><img src="/assets/img/work/le-riad-hero.webp" width="1440" height="900" alt="" data-name="Le Riad" data-kind="Restaurant"></picture>
-          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/cabanis-mh.webp" width="780" height="1440"><img src="/assets/img/work/cabanis-hero.webp" width="1440" height="900" alt="" data-name="Cabanis" data-kind="Pâtisserie"></picture>
-          <picture><source media="(max-width: 700px)" srcset="/assets/img/work/carrosserie-ponce-mh.webp" width="780" height="1440"><img src="/assets/img/work/carrosserie-ponce-hero.webp" width="1440" height="900" alt="" data-name="Carrosserie Ponce" data-kind="Carrosserie"></picture>
-        </div>
-        <div class="hero-scrim" aria-hidden="true"></div>
-        <div class="hero-scan" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero-copy" data-hero-copy>
+    <!-- ============ HERO : d'abord qui je suis et ce que je fais ============ -->
+    <section class="page-hero home-hero" aria-labelledby="titre-hero">
+      <div class="wrap">
         <p class="hero-kicker"><span class="dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
-        <h1 id="titre-hero" class="hero-title">
-          <span class="visually-hidden">Des sites web qui donnent envie d'entrer.</span>
-          <span class="line" aria-hidden="true"><span>Des sites web qui</span></span>
-          <span class="line" aria-hidden="true"><span class="word" data-words-cycle="captivent.|donnent envie d'entrer.|vous ressemblent.|font venir des clients.">donnent envie d'entrer.</span></span>
-        </h1>
-        <p class="hero-lead">Création de sites vitrines pour artisans, commerces et indépendants. Une maquette gratuite avant de décider.</p>
+        <h1 id="titre-hero" class="home-title">Benjamin Paule</h1>
+        <p class="home-sub">Création de sites internet pour les artisans et les commerces, à Orange et dans le Vaucluse.</p>
+        <p class="lede">Un site simple et clair, pensé d'abord pour le téléphone, qui aide vos clients à vous trouver sur Google et à vous appeler en un geste.</p>
+        <ul class="home-proofs">
+          <li><strong>300 €</strong> le site vitrine, payé une seule fois</li>
+          <li><strong>Maquette gratuite</strong> avant de décider</li>
+          <li><strong>Un seul interlocuteur</strong>, à Orange</li>
+        </ul>
         <div class="hero-ctas">
-          <a class="pill pill-glow" href="/contact" data-magnetic data-umami-event="cta-devis" data-umami-event-position="hero">Recevoir ma maquette gratuite</a>
-          <a class="pill pill-ghost" href="/realisations" data-magnetic>Voir les réalisations</a>
+          <a class="pill pill-glow" href="/contact" data-umami-event="cta-devis" data-umami-event-position="hero">Recevoir ma maquette gratuite</a>
+          <a class="pill pill-ghost" href="#realisations">Voir des exemples</a>
         </div>
       </div>
+    </section>
 
-      <p class="hero-caption"><span data-hero-name>Mélodie des Sens</span> <span class="hero-caption-kind" data-hero-kind>Institut de beauté</span></p>
-      <a class="hero-cue" href="#realisations"><span class="visually-hidden">Voir les réalisations</span><span class="hero-cue-line" aria-hidden="true"></span></a>
+    <!-- ============ COMMENT LE SITE AMÈNE DES CLIENTS ============ -->
+    <section id="clients" class="section" aria-labelledby="titre-clients">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="titre-clients" class="display-s">Comment un site vous amène des clients</h2>
+          <p class="lede">Aujourd'hui, la plupart des gens cherchent un artisan ou un commerce sur leur téléphone, comparent deux ou trois résultats, puis appellent. Votre site est fait pour gagner ce moment-là.</p>
+        </div>
+        <ol class="steps">
+          <li class="step"><p class="step-num mono">01</p><h3>On vous trouve</h3><p>Votre site apparaît quand on cherche votre métier dans votre ville, par exemple « plombier Orange ».</p></li>
+          <li class="step"><p class="step-num mono">02</p><h3>On vous fait confiance</h3><p>Vos services, vos photos, vos horaires et vos avis clients sont clairs dès le premier coup d'œil.</p></li>
+          <li class="step"><p class="step-num mono">03</p><h3>On vous appelle</h3><p>Un bouton pour appeler, un pour l'itinéraire, un formulaire de demande de devis : le client vous contacte en un geste.</p></li>
+          <li class="step"><p class="step-num mono">04</p><h3>Vous restez visible</h3><p>Votre fiche Google est soignée et votre site reste à jour quand vos horaires ou vos tarifs changent.</p></li>
+        </ol>
+      </div>
     </section>
 
     <!-- ============ PRODUITS : Mac et iPhone épinglés, écrans qui défilent ============ -->
     <section id="realisations" class="showcase" aria-labelledby="titre-realisations">
       <div class="showcase-head">
-        <h2 id="titre-realisations" class="display" data-decode>Sur grand écran.<br><span class="muted">Et dans la poche.</span></h2>
-        <p class="lede">Chaque site est dessiné deux fois : pour l'ordinateur, et pour le téléphone, où vos clients vous cherchent d'abord.</p>
+        <h2 id="titre-realisations" class="display">Des exemples<br><span class="muted">de mon travail.</span></h2>
+        <p class="lede">Voici des maquettes que j'ai proposées à des commerces d'Orange. Chaque site est d'abord pensé pour le téléphone, là où vos clients vous cherchent.</p>
       </div>
 
       <div class="stage" data-stage>
@@ -146,7 +140,7 @@
     <section id="galerie" class="gallery" aria-labelledby="titre-galerie">
       <div class="gallery-pin" data-gallery-pin>
         <div class="gallery-head">
-          <h2 id="titre-galerie" class="display-s" data-decode>Neuf commerces,<br>neuf caractères.</h2>
+          <h2 id="titre-galerie" class="display-s">Neuf commerces,<br>neuf caractères.</h2>
           <p class="lede">Aucun modèle tout fait : chaque maquette part du métier, du quartier et des clients.</p>
         </div>
         <ul class="gallery-track" data-gallery-track>
@@ -167,7 +161,7 @@
     <!-- ============ SERVICES : liste éditoriale, aperçu qui suit la souris ============ -->
     <section id="services" class="services" aria-labelledby="titre-services">
       <div class="wrap">
-        <h2 id="titre-services" class="display-s" data-decode>Ce que je fais<br>pour vous.</h2>
+        <h2 id="titre-services" class="display-s">Ce que je fais<br>pour vous.</h2>
         <ul class="svc-list">
           <li class="svc" data-svc>
             <span class="svc-num mono" aria-hidden="true">01</span>
@@ -181,8 +175,8 @@
           </li>
           <li class="svc" data-svc>
             <span class="svc-num mono" aria-hidden="true">03</span>
-            <h3 class="svc-title">Référencement local</h3>
-            <p class="svc-text">Balises, contenus et fiche Google soignés, pour apparaître quand on cherche votre métier dans votre ville.</p>
+            <h3 class="svc-title">Être trouvé sur Google</h3>
+            <p class="svc-text">Des textes et une fiche Google bien travaillés, pour apparaître quand on cherche votre métier dans votre ville.</p>
           </li>
           <li class="svc" data-svc>
             <span class="svc-num mono" aria-hidden="true">04</span>
@@ -209,7 +203,7 @@
         <dl class="facts">
           <div><dt>Avant de décider</dt><dd>Une maquette gratuite de votre page d'accueil.</dd></div>
           <div><dt>Pendant</dt><dd>Un seul contact, qui répond vite et simplement.</dd></div>
-          <div><dt>Après</dt><dd>Un site rapide, sécurisé et conforme au RGPD.</dd></div>
+          <div><dt>Après</dt><dd>Un site rapide, sécurisé et en règle avec la loi.</dd></div>
         </dl>
         <a class="more-link" href="/a-propos">En savoir plus sur moi</a>
       </div>
@@ -221,7 +215,7 @@
     <section id="contact" class="contact" aria-labelledby="titre-contact">
       <div class="wrap contact-grid">
         <div class="cta" data-cta>
-          <h2 id="titre-contact" class="cta-title" data-decode>Parlons de<br>votre site.</h2>
+          <h2 id="titre-contact" class="cta-title">Parlons de<br>votre site.</h2>
           <p class="lede">Décrivez votre activité en quelques lignes. Je vous réponds avec une première maquette de votre page d'accueil, gratuitement et sans engagement.</p>
           <p class="small">Vos informations servent uniquement à répondre à votre demande. <a href="/confidentialite">En savoir plus sur vos données</a>.</p>
         </div>

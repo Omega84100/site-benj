@@ -38,6 +38,7 @@ if (!gsap || !ScrollTrigger || reduce) {
 
 /* Séquence du hero en CSS (secours si WebGL indisponible) */
 function cssSequence() {
+  if (!heroImgs.length) return null;
   let i = 0;
   return setInterval(() => {
     heroImgs[i].classList.remove('is-active');
@@ -79,12 +80,14 @@ function init() {
     cycleWords();
   });
 
+  // Ancien hero en images : ne tourne que si la page en contient encore un.
   const heroMedia = $('[data-hero-media]');
-  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
-    .to(heroMedia, { clipPath: 'inset(0% 4% 12% 4% round 28px)', scale: 0.96, ease: 'none' }, 0)
-    .to('[data-hero-copy]', { yPercent: -60, opacity: 0, ease: 'none' }, 0);
-
-  heroSequence();
+  if (heroMedia && heroImgs.length) {
+    gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
+      .to(heroMedia, { clipPath: 'inset(0% 4% 12% 4% round 28px)', scale: 0.96, ease: 'none' }, 0)
+      .to('[data-hero-copy]', { yPercent: -60, opacity: 0, ease: 'none' }, 0);
+    heroSequence();
+  }
 
   /* ---------- 3. Produits : Mac + iPhone ---------- */
   const mac = $('[data-mac]');

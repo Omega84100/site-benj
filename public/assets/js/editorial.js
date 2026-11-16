@@ -107,7 +107,7 @@ function init() {
   // Section épinglée : chaque projet fait défiler ses écrans, puis le suivant se dévoile
   const tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: '[data-stage]', start: 'top top', end: () => '+=' + window.innerHeight * n * 0.7, pin: true, scrub: 1, anticipatePin: 1 },
+    scrollTrigger: { trigger: '[data-stage]', start: 'top top', end: () => '+=' + window.innerHeight * n * 1.0, pin: true, scrub: 0.5, anticipatePin: 1 },
   });
   for (let i = 0; i < n; i++) {
     const mImg = $('img', macLayers[i]);
@@ -180,7 +180,7 @@ function init() {
   if ($('.review-list')) gsap.from('.review', { opacity: 0, y: 40, duration: 1.3, stagger: 0.12, ease: 'expo.out', scrollTrigger: { trigger: '.review-list', start: 'top 82%' } });
   gsap.fromTo('.cta-title', { yPercent: 30, opacity: 0.2 }, { yPercent: 0, opacity: 1, ease: 'none', scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'top 30%', scrub: true } });
 
-  if (finePointer) { galleryHover(); cursorAndMagnets(); }
+  if (finePointer) { cursorAndMagnets(); }
 
   // Titres de section : ils se « décodent » en arrivant à l'écran
   $$('[data-decode]').forEach((el) => {

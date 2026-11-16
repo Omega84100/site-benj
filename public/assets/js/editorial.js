@@ -45,7 +45,7 @@ function cssSequence() {
     i = (i + 1) % heroImgs.length;
     heroImgs[i].classList.add('is-active');
     setCaption(i);
-  }, 6000);
+  }, 2800);
 }
 
 function init() {
@@ -83,10 +83,8 @@ function init() {
   // Ancien hero en images : ne tourne que si la page en contient encore un.
   const heroMedia = $('[data-hero-media]');
   if (heroMedia && heroImgs.length) {
-    gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
-      .to(heroMedia, { clipPath: 'inset(0% 4% 12% 4% round 28px)', scale: 0.96, ease: 'none' }, 0)
-      .to('[data-hero-copy]', { yPercent: -60, opacity: 0, ease: 'none' }, 0);
-    heroSequence();
+    // Fondu simple et rapide entre les maquettes (sans effet WebGL, plus calme pour les yeux)
+    cssSequence();
   }
 
   /* ---------- 3. Produits : Mac + iPhone ---------- */
@@ -109,7 +107,7 @@ function init() {
   // Section épinglée : chaque projet fait défiler ses écrans, puis le suivant se dévoile
   const tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: '[data-stage]', start: 'top top', end: () => '+=' + window.innerHeight * n * 1.1, pin: true, scrub: 1, anticipatePin: 1 },
+    scrollTrigger: { trigger: '[data-stage]', start: 'top top', end: () => '+=' + window.innerHeight * n * 0.7, pin: true, scrub: 1, anticipatePin: 1 },
   });
   for (let i = 0; i < n; i++) {
     const mImg = $('img', macLayers[i]);

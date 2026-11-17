@@ -19,12 +19,14 @@ const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 const heroImgs = $$('[data-hero-stack] img');
 const heroName = $('[data-hero-name]');
 const heroKind = $('[data-hero-kind]');
+const heroLabel = $('[data-hero-label]');
 
 function setCaption(i) {
   const img = heroImgs[i];
   if (!img || !heroName) return;
   heroName.textContent = img.dataset.name;
   heroKind.textContent = img.dataset.kind;
+  if (heroLabel) heroLabel.textContent = img.dataset.label || 'Exemple de maquette :';
 }
 
 if (!gsap || !ScrollTrigger || reduce) {
